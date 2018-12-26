@@ -22,3 +22,7 @@ If you work with **ios** hack a while the **package.json**.
 | before pushing the button | after accepting the picture |
 | ------------------------- | --------------------------- |
 | ![before](before.jpg)     | ![after](after.jpg)         |
+
+In the end the [chrome://inspect](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews)
+was instrumental to figure it out and the [react docs](https://reactjs.org/docs/handling-events.html)
+as well.
