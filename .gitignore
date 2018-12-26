@@ -3,4 +3,5 @@ platforms/android
 platforms/ios
 plugins/cordova-*
 package-lock.json
+.DS_Store
 
