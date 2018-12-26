@@ -1,0 +1,56 @@
+{
+  "name": "foo.bar.cordova.react.issue",
+  "displayName": "cordova-react-issue",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development budo src/main.js:build.js -o -l",
+    "build:clean": "rm -rf www ; mkdir www",
+    "build:js": "cross-env NODE_ENV=production browserify src/main.js -o www/build.js",
+    "build:html": "cp index.html www/index.html",
+    "build:assets": "echo 'tbd'",
+    "build": "npm run build:clean ; npm run build:js ; npm run build:html ; npm run build:assets",
+    "android": "npm run build ; cordova run android"
+  },
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "budo": "^11.5.0",
+    "cross-env": "^5.2.0"
+  },
+  "dependencies": {
+    "cordova-android": "^7.1.4",
+    "cordova-plugin-camera": "^4.0.3",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+          ]
+        }
+      ]
+    ]
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-camera": {},
+      "cordova-plugin-whitelist": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}
