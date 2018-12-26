@@ -4,10 +4,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { image: "" };
-    this.takepic = this.takepic.bind(this);
   }
 
-  takepic(ev) {
+  takepic = ev => {
     if (window.cordova) {
       navigator.camera.getPicture(image => {
         this.setState({
